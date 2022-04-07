@@ -2,7 +2,6 @@
   "scripts": {
     "test-1": "npm run task_0",
     "test-2": "npm run task_1 && npm run task_2 && npm run task_3",
-    
     "task_0": "node firstStep/task_0.js",
     "task_1": "node secondStep/task_1.js",
     "task_2": "node secondStep/task_2.js",
