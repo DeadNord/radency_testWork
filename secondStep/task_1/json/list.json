@@ -1,10 +1,30 @@
-[
+ [
 {
-"id": "value",
-"categories": "Task || Random Thought || Idea",
-"date": [],
-"status": true
+  "id": "value",
+  "name": "value",
+  "created": "value",
+  "category": "Task || Random Thought || Idea",
+  "content": "value",
+  "dates": [],
+  "status": true
+},
+{
+  "id": "value",
+  "name": "value",
+  "created": "value",
+  "category": "Task || Random Thought || Idea",
+  "content": "value",
+  "dates": [],
+  "status": true
+},
+{
+  "id": "value",
+  "name": "value",
+  "created": "value",
+  "category": "Task || Random Thought || Idea",
+  "content": "value",
+  "dates": [],
+  "status": true
 }
 ]
 
-// categories Id?

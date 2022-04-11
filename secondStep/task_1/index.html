@@ -8,44 +8,63 @@
     <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
-<div>
-    <table class="table-notes js-table-notes">
-          
-    <tr>
-        <th>Name</th>
-        <th>Created</th>
-         <th>Category</th>
-          <th>Content</th>
-          <th>Dates</th>
-    </tr>
-   <tr>
-       <td>Test</td>
-        <td>Test</td>
-         <td>Test</td>
-          <td>Test</td>
-           <td>Test</td>
-   </tr>
-      <tr>
-       <td>Test</td>
-        <td>Test</td>
-         <td>Test</td>
-          <td>Test</td>
-           <td>Test</td>
-   </tr>
-    </table>
-    <button></button>
-</div>
-<div>
-    <table class="table-statistic js-table-statistic">
-  <tr>
-        <th>Note Category</th>
-        <th>Active</th>
-         <th>Archived</th>
-    </tr>
-    </table>
-</div>
+
+    <section class="section">
+     <div class="container">
+           <div class="table js-table--notes"> 
+       
+            <ul class="topic__list topic__list--notes">
+                <li class="topic__item">Name </li>
+                 <li class="topic__item">Created </li>
+                  <li class="topic__item">Category </li>
+                   <li class="topic__item">Content </li>
+                    <li class="topic__item">Dates </li>
+            </ul>
+     
+      
+            <ul class="table__list table__list--notes">
+                <li class="table__item  "> test</li>
+              <li class="table__item"> test</li>
+                   <li class="table__item"> test</li>
+                        <li class="table__item"> test</li>
+                             <li class="table__item"> test</li>
+            </ul>
+        </div>
+           <div class="btn--notes">
+        <button  
+    type="button"
+        class="btn"
+        data-action="add-note">
+        Create Note
+    </button>
+   </div>
+     </div>
+     
+    </section>
 
 
-    <script src="./index.js" type="module"></script>
+    <section class="section">
+        <div class="container">
+            <div class="table">
+
+     <ul class="topic__list topic__list-statistic">
+                <li class="topic__item">Note Category </li>
+                 <li class="topic__item">Active </li>
+                  <li class="topic__item">Archived </li>
+            </ul>
+
+     <ul class="table__list table__list-statistic">
+                <li class="table__item ">Note Category </li>
+                 <li class="table__item">Active </li>
+                  <li class="table__item">Archived </li>
+            </ul>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="./js/index.js" type="module"></script>
 </body>
 </html>
