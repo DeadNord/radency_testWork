@@ -1,10 +1,27 @@
 {
+  "name": "radency",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test-1": "npm run task_0",
-    "test-2": "npm run task_1 && npm run task_2 && npm run task_3",
     "task_0": "node firstStep/task_0.js",
     "task_1": "node secondStep/task_1.js",
     "task_2": "node secondStep/task_2.js",
-    "task_3": "node secondStep/task_3.js"
+    "task_3": "node secondStep/task_3.js",
+    "lint": "eslint **/*.js",
+    "lint:fix": "eslint --fix **/*.js"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "16.0.3",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "5.2.0",
+    "prettier": "^2.4.1"
+  },
+  
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
