@@ -5,7 +5,7 @@
   "created": "value",
   "category": "Task || Random Thought || Idea",
   "content": "value",
-  "dates": [],
+  "dates": [1231, 2424],
   "status": true
 },
 {
@@ -14,7 +14,7 @@
   "created": "value",
   "category": "Task || Random Thought || Idea",
   "content": "value",
-  "dates": [],
+  "dates": [1551, 2424],
   "status": true
 },
 {
@@ -23,8 +23,17 @@
   "created": "value",
   "category": "Task || Random Thought || Idea",
   "content": "value",
-  "dates": [],
+  "dates": [1677],
   "status": true
+},
+{
+  "id": "value",
+  "name": "value",
+  "created": "value",
+  "category": "Task || Random Thought || Idea",
+  "content": "value",
+  "dates": [1677],
+  "status": false
 }
 ]
 

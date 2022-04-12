@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "task_0": "node firstStep/task_0.js",
-    "task_1": "node secondStep/task_1.js",
+    "task_1": "parcel secondStep/task_1/index.html",
     "task_2": "node secondStep/task_2.js",
     "task_3": "node secondStep/task_3.js",
     "lint": "eslint **/*.js",
@@ -19,8 +19,15 @@
     "eslint-plugin-promise": "5.2.0",
     "prettier": "^2.4.1"
   },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-handlebars": "^0.4.4",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "parcel-plugin-nuke-dist": "^1.0.1"
   }
 }
