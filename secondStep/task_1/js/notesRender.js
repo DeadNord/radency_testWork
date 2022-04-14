@@ -12,6 +12,7 @@ const refs = {
 // refs.galleryList.addEventListener("click", onClickHandler);
 // refs.btn.addEventListener("click", onCloseHandler);
 
+// Рендер
 const renderNotes = arr => {
   const activeNotes = arr.filter(item => item.status === true);
   refs.notesTable.insertAdjacentHTML('beforeEnd', notesList(activeNotes));
