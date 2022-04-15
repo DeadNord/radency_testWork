@@ -11,6 +11,15 @@
 
     <section class="section">
      <div class="container">
+       <div class="vision-mode">
+         <button  
+    type="button"
+        class="btn btn--vision-mode"
+        data-action="vision-mode"
+        >
+        
+    </button>
+       </div>
            <div class="table js-table--notes"> 
        
             <ul class="topic__list topic__list--notes">
@@ -27,8 +36,9 @@
         <button  
     type="button"
         class="btn"
-        data-action="add-note">
-        Create Note
+        data-modal-open
+        >
+        Add Note
     </button>
    </div>
      </div>
@@ -46,16 +56,121 @@
                   <li class="topic__item">Archived </li>
             </ul>
 
-     <!-- <ul class="table__list table__list-statistic">
-                <li class="table__item ">Note Category </li>
-                 <li class="table__item">Active </li>
-                  <li class="table__item">Archived </li>
-            </ul> -->
 
             </div>
         </div>
     </section>
 
+    <div class="modal modal--is-hidden">
+      <div class="container modal__content">
+      <div>
+          <form class="form js-form--add">
+               <label>
+            <p >Name</p>
+            <input
+              type="text"
+              name="name"
+              required
+            />
+          </label>
+
+           <label>
+            <p >Category</p>
+            <input
+              type="text"
+              name="category"
+              required
+              list="category"
+            />
+             <datalist id="category">
+              <option value="Task" />
+              <option value="Thought" />
+              <option value="Idea" />
+            </datalist>
+          </label>
+           <label>
+            <p >Content</p>
+            <input
+              type="text"
+              name="content"
+              required
+            />
+          </label>
+           <label>
+            <p >Dates</p>
+            <input
+              type="text"
+              name="dates"
+              required
+            />
+          </label>
+              <button  
+    type="submit"
+        class="btn btn--add-note"
+        data-action="add-note"
+        >
+        Add Note
+    </button>
+          </form>
+              <form class="form js-form--change hidden">
+               <label>
+            <p >Name</p>
+            <input
+              type="text"
+              name="name"
+              required
+            />
+          </label>
+
+           <label>
+            <p >Category</p>
+            <input
+              type="text"
+              name="category"
+              required
+              list="category"
+            />
+             <datalist id="category">
+              <option value="Task" />
+              <option value="Thought" />
+              <option value="Idea" />
+            </datalist>
+          </label>
+           <label>
+            <p >Content</p>
+            <input
+              type="text"
+              name="content"
+              required
+            />
+          </label>
+           <label>
+            <p >Dates</p>
+            <input
+              type="text"
+              name="dates"
+              required
+            />
+          </label>
+              <button  
+    type="submit"
+        class="btn btn--change"
+        data-action="change-note"
+        >
+        Change Note
+    </button>
+          </form>
+      </div>
+            <button  
+    type="button"
+        class="btn btn--modal-close"
+        data-modal-close
+        >
+        Close
+    </button>
+
+      </div>
+    </div>
 
 
     <script src="./index.js" type="module"></script>

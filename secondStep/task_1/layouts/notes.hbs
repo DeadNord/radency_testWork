@@ -1,14 +1,21 @@
+{{#each this}}
 
-             {{#each this}}
-      
-         <ul class="table__list table__list--notes">
-                <li class="table__item  "> <p>{{name}}</p></li>
-              <li class="table__item"> <p>{{created}}</p></li>
-                   <li class="table__item"> <p>{{category}}</p></li>
-                        <li class="table__item"> <p>{{content}}</p></li>
-                             <li class="table__item"> <p>{{dates}}</p></li>
-                                  </ul>
-    
-
-                                   {{/each}}
-       
+  <ul id='{{id}}' class='table__list table__list--notes'>
+    <li class='table__item'> <p>{{name}}</p></li>
+    <li class='table__item'> <p>{{created}}</p></li>
+    <li class='table__item'> <p>{{category}}</p></li>
+    <li class='table__item'> <p>{{content}}</p></li>
+    <li class='table__item'> <p>{{dates}}</p></li>
+    <div class='table__ctrl'>
+      <button type='button' class='btn btn--note-ctrl' data-action='delete'>
+        Del
+      </button>
+      <button type='button' class='btn btn--note-ctrl' data-action='change'>
+        Ch
+      </button>
+      <button type='button' class='btn btn--note-ctrl' data-action='archive'>
+        Arch
+      </button>
+    </div>
+  </ul>
+{{/each}}

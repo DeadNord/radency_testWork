@@ -1,6 +1,6 @@
  [
 {
-  "id": "124124",
+  "id": "d2411",
   "name": "Покупки",
   "created": "12.04.2022",
   "category": "Task",
@@ -9,7 +9,7 @@
   "status": true
 },
 {
-  "id": "12424124",
+  "id": "2d4242",
   "name": "Домашнее",
   "created": "13.04.2022",
   "category": "Task",
@@ -18,7 +18,7 @@
   "status": false
 },
 {
-  "id": "124124",
+  "id": "d2424",
   "name": "Кофе",
   "created": "14.04.2022",
   "category": "Thought",
@@ -27,11 +27,38 @@
   "status": true
 },
 {
-  "id": "value",
+  "id": "4242d42",
   "name": "Прога",
   "created": "14.04.2022",
   "category": "Idea",
   "content": "Нужно бы сделать прикольную прогу для статистики",
+  "dates": [14.04],
+  "status": true
+},
+{
+  "id": "2vv25c2q2",
+  "name": "Шаблон 5",
+  "created": "14.04.2022",
+  "category": "Task",
+  "content": "Шаблон 5 как никак",
+  "dates": [19.04],
+  "status": true
+},
+{
+  "id": "g363c22c1",
+  "name": "Шаблончик 6",
+  "created": "14.04.2022",
+  "category": "Thought",
+  "content": "Устал писать шаблоны...",
+  "dates": [14.04],
+  "status": true
+},
+{
+  "id": "c32c2722",
+  "name": "Золотые слова",
+  "created": "14.04.2022",
+  "category": "Thought",
+  "content": "На Реакте веселее, Ванила фигня",
   "dates": [14.04],
   "status": true
 }

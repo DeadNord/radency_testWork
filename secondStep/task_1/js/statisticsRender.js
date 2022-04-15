@@ -1,5 +1,6 @@
-import data from '../json/data.json';
+import dataBase from '../json/data.json';
 import statisticsList from '../layouts/statistics.hbs';
+const data = JSON.parse(window.localStorage.getItem('data'));
 
 // Ссылки
 const refs = {
@@ -14,7 +15,7 @@ const filterStatistics = arr => {
   const amountArchivedNotes = {};
 
   const amountNotes = (arr, res) => {
-    for (let i of arr) {
+    for (const i of arr) {
       if (res[i] === undefined) {
         res[i] = 1;
       } else {
@@ -28,17 +29,17 @@ const filterStatistics = arr => {
   return [
     {
       category: 'Task',
-      active: amountActiveNotes.Task,
+      active: amountActiveNotes.Task !== undefined ? amountActiveNotes.Task : 0,
       archived: amountArchivedNotes.Task !== undefined ? amountArchivedNotes.Task : 0,
     },
     {
       category: 'Thought',
-      active: amountActiveNotes.Thought,
+      active: amountActiveNotes.Thought !== undefined ? amountActiveNotes.Thought : 0,
       archived: amountArchivedNotes.Thought !== undefined ? amountArchivedNotes.Thought : 0,
     },
     {
       category: 'Idea',
-      active: amountActiveNotes.Idea,
+      active: amountActiveNotes.Idea !== undefined ? amountActiveNotes.Idea : 0,
       archived: amountArchivedNotes.Idea !== undefined ? amountArchivedNotes.Idea : 0,
     },
   ];
@@ -49,4 +50,9 @@ const renderStatistics = arr => {
   const result = filterStatistics(arr);
   refs.statisticsTable.insertAdjacentHTML('beforeEnd', statisticsList(result));
 };
-renderStatistics(data);
+
+if (data) {
+  renderStatistics(data);
+} else {
+  renderStatistics(dataBase);
+}
