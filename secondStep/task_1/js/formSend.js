@@ -1,3 +1,4 @@
+import { parse } from 'handlebars';
 import { v4 as uuidv4 } from 'uuid';
 const data = JSON.parse(window.localStorage.getItem('data'));
 
@@ -19,7 +20,7 @@ function sendForm() {
     created: localDate,
     category: refs.form.category.value,
     content: refs.form.content.value,
-    dates: [refs.form.dates.value],
+    dates: refs.form.content.value.match(/(\d{1,4}([.\-/])\d{1,2}([.\-/])\d{1,4})/g),
     status: true,
   };
 

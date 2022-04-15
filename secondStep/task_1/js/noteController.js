@@ -58,7 +58,6 @@ function changeNote(noteId) {
           name: form.name,
           category: form.category,
           content: form.content,
-          dates: form.dates,
         }
       : item,
   );
