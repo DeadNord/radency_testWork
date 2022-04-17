@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <!-- <link rel="stylesheet" href="./css/index.css" /> -->
+</head>
+<body>
+
+    <section class="section">
+     <div class="container">
+       <div class="vision-mode">
+         <button  
+    type="button"
+        class="btn btn--vision-mode"
+        data-action="vision-mode"
+        >
+        
+    </button>
+       </div>
+           <div class="table js-table--notes"> 
+       
+            <ul class="topic__list topic__list--notes">
+                <li class="topic__item">Name </li>
+                 <li class="topic__item">Created </li>
+                  <li class="topic__item">Category </li>
+                   <li class="topic__item">Content </li>
+                    <li class="topic__item">Dates </li>
+            </ul>
+     
+
+        </div>
+           <div class="btn--notes">
+        <button  
+    type="button"
+        class="btn"
+        data-modal-open
+        >
+        Add Note
+    </button>
+   </div>
+     </div>
+     
+    </section>
+
+
+    <section class="section">
+        <div class="container">
+            <div class="table js-table--statistic">
+
+     <ul class="topic__list topic__list-statistic">
+                <li class="topic__item">Note Category </li>
+                 <li class="topic__item">Active </li>
+                  <li class="topic__item">Archived </li>
+            </ul>
+
+
+            </div>
+        </div>
+    </section>
+
+    <div class="modal modal--is-hidden">
+      <div class="container modal__content">
+      <div>
+          <form class="form js-form--add">
+               <label>
+            <p >Name</p>
+            <input
+              type="text"
+              name="name"
+              required
+            />
+          </label>
+
+           <label>
+            <p >Category</p>
+            <input
+              type="text"
+              name="category"
+              required
+              list="category"
+            />
+             <datalist id="category">
+              <option value="Task" />
+              <option value="Thought" />
+              <option value="Idea" />
+            </datalist>
+          </label>
+           <label>
+            <p >Content</p>
+            <input
+              type="text"
+              name="content"
+              required
+            />
+          </label>
+          
+              <button  
+    type="submit"
+        class="btn btn--add-note"
+        data-action="add-note"
+        >
+        Add Note
+    </button>
+          </form>
+              <form class="form js-form--change hidden">
+               <label>
+            <p >Name</p>
+            <input
+              type="text"
+              name="name"
+              required
+            />
+          </label>
+
+           <label>
+            <p >Category</p>
+            <input
+              type="text"
+              name="category"
+              required
+              list="category"
+            />
+             <datalist id="category">
+              <option value="Task" />
+              <option value="Thought" />
+              <option value="Idea" />
+            </datalist>
+          </label>
+           <label>
+            <p >Content</p>
+            <input
+              type="text"
+              name="content"
+              required
+            />
+          </label>
+              <button  
+    type="submit"
+        class="btn btn--change"
+        data-action="change-note"
+        >
+        Change Note
+    </button>
+          </form>
+      </div>
+            <button  
+    type="button"
+        class="btn btn--modal-close"
+        data-modal-close
+        >
+        Close
+    </button>
+
+      </div>
+    </div>
+
+
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
