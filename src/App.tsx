@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// importComponent
+import Section from './components/section/Section';
+import Header from './components/header/Header';
+import Table from './components/table/Table';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Section>
+        <Header  /> 
+      </Section>
+
+       <Section>
+          <Table type={"list"}></Table>
+      </Section> 
+        <Section>
+          <Table type={"statistics"}></Table>
+        </Section> 
+
+      {/* <Modal >
+                <Form type={''} />
+              </Modal> */}
+    </>
   );
 }
-
-export default App;

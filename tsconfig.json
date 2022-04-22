@@ -1,4 +1,8 @@
 {
+  "include": [
+    "src",
+    "env.d.ts"
+  ],
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -20,7 +24,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+
+ 
 }
