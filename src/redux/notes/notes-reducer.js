@@ -9,8 +9,21 @@ import {
   changeVisibilityFilter,
 } from './notes-actions';
 
+import { v4 } from 'uuid';
+
 const itemsReducer = createReducer([], {
-  [addNote]: (state, { payload }) => [...state, payload],
+  [addNote]: (state, { payload }) => [
+    ...state,
+    {
+      id: v4(),
+      name: payload.name,
+      created: Date().toLocaleDateString(),
+      category: payload.category,
+      content: payload.content,
+      dates: payload.content.match(/(\d{1,4}([.\-/])\d{1,2}([.\-/])\d{1,4})/g),
+      status: true,
+    },
+  ],
   [deleteNote]: (state, { payload }) =>
     state.filter(item => item.id !== payload),
   [changeNote]: (state, { payload }) =>
@@ -38,3 +51,17 @@ export const notesReducer = combineReducers({
   items: itemsReducer,
   visibilityFilter: visibilityFilterReducer,
 });
+
+// const date = new Date();
+// const localDate = date.toLocaleDateString();
+// const form = {
+//   id: uuidv4(),
+//   name: refs.form.name.value,
+//   created: localDate,
+//   category: refs.form.category.value,
+//   content: refs.form.content.value,
+//   dates: refs.form.content.value.match(
+//     /(\d{1,4}([.\-/])\d{1,2}([.\-/])\d{1,4})/g,
+//   ),
+//   status: true,
+// };

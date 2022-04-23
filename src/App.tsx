@@ -16,10 +16,6 @@ export default function App() {
         <Section>
           <Table type={"statistics"}></Table>
         </Section> 
-
-      {/* <Modal >
-                <Form type={''} />
-              </Modal> */}
     </>
   );
 }

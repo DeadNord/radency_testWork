@@ -1,5 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { notesReducer } from './notes/notes-reducer';
+import { modalReducer } from './modal/modal-reducer';
 import data from '../json/data.json';
 
 
@@ -13,8 +14,11 @@ import {
 } from 'redux-persist';
 
 const preloadedState: Object = {
-  items: data,
-  visibilityFilter: true,
+  notes: {
+    items: data,
+    visibilityFilter: true,
+  },
+   modal: false
 };
 
 
@@ -28,13 +32,12 @@ const middleware = [
 
 const store = configureStore({
   reducer: {
-    notes:  notesReducer,
+    notes: notesReducer,
+    modal: modalReducer
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',
-  preloadedState: {
-    notes: preloadedState,
-  },
+  preloadedState: preloadedState,
 });
 
 
