@@ -1,27 +1,27 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-export const getItems = state => state.notes.items;
+export const getItems = (state: any) => state.notes.items;
 
-export const getVisibilityFilter = state => state.notes.visibilityFilter;
+export const getVisibilityFilter = (state: any) => state.notes.visibilityFilter;
 
 export const getNotes = createSelector(
   [getItems, getVisibilityFilter],
   (items, filter) => {
-    return items.filter(item => item.status === filter);
+    return items.filter((item: any) => item.status === filter);
   },
 );
 
 export const getStatistics = createSelector([getItems], items => {
   const activeNotes = items
-    .filter(item => item.status === true)
-    .map(item => item.category);
+    .filter((item:any) => item.status === true)
+    .map((item:any) => item.category);
   const archivedNotes = items
-    .filter(item => item.status === false)
-    .map(item => item.category);
-  const amountActiveNotes = {};
-  const amountArchivedNotes = {};
+    .filter((item:any) => item.status === false)
+    .map((item:any) => item.category);
+  const amountActiveNotes: {[x: string]: number} = {};
+  const amountArchivedNotes: {[x: string]: number} = {};
 
-  const amountNotes = (arr, res) => {
+  const amountNotes = (arr: any, res: { [x: string]: number }) => {
     for (const i of arr) {
       if (res[i] === undefined) {
         res[i] = 1;
@@ -30,8 +30,12 @@ export const getStatistics = createSelector([getItems], items => {
       }
     }
   };
+
+
+  
   amountNotes(activeNotes, amountActiveNotes);
   amountNotes(archivedNotes, amountArchivedNotes);
+
 
   return [
     {

@@ -11,40 +11,43 @@ import {
 
 import { v4 } from 'uuid';
 
-const itemsReducer = createReducer([], {
-  [addNote]: (state, { payload }) => [
+
+
+
+const itemsReducer = createReducer([{}], {
+  [addNote.type]: (state, { payload }) => [
     ...state,
     {
       id: v4(),
-      name: payload.name,
-      created: Date().toLocaleDateString(),
+      title: payload.title,
+      created: new Date().toLocaleDateString(),
       category: payload.category,
       content: payload.content,
       dates: payload.content.match(/(\d{1,4}([.\-/])\d{1,2}([.\-/])\d{1,4})/g),
       status: true,
     },
   ],
-  [deleteNote]: (state, { payload }) =>
-    state.filter(item => item.id !== payload),
-  [changeNote]: (state, { payload }) =>
-    state.map(item =>
+  [deleteNote.type]: (state, { payload }) =>
+    state.filter((item: any) => item.id !== payload),
+  [changeNote.type]: (state, { payload }) =>
+    state.map((item: any) =>
       item.id === payload.id
         ? {
             ...item,
-            name: payload.name,
+            title: payload.title,
             category: payload.category,
             content: payload.content,
           }
         : item,
     ),
-  [archiveNote]: (state, { payload }) =>
-    state.map(item =>
-      item.id === payload.id ? { ...item, status: !item.status } : item,
+  [archiveNote.type]: (state, { payload }) =>
+    state.map((item: any) =>
+      item.id === payload ? { ...item, status: !item.status } : item,
     ),
 });
 
 const visibilityFilterReducer = createReducer(true, {
-  [changeVisibilityFilter]: (_, { payload }) => payload,
+  [changeVisibilityFilter.type]: (_, { payload }) => payload,
 });
 
 export const notesReducer = combineReducers({

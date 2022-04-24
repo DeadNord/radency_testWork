@@ -14,21 +14,29 @@ import { deleteNote, archiveNote } from '../../redux/notes/notes-actions';
 import { openModal } from '../../redux/modal/modal-actions';
 
 const TableNotes = () => {
-  const [formType, setformType] = useState('');
-    const [itemId, setitemId] = useState("");
+  const [formType, setformType] = useState("");
+  const [itemId, setitemId] = useState("");
 
   const notes = useSelector(getNotes);
   const modalState = useSelector(getModalState);
 
   const dispatch = useDispatch();
 
-  const openModalForm = (type: string, id: string = "") => {
-    setitemId(id)
-    dispatch(openModal())
-    setformType(type);
+  const openFormAdd = () => {
+    setformType("add-note");
+    dispatch(openModal());
   };
 
+  const openFormChange = (id: string) => {
+    setitemId(id)
+    setformType("change-note");
+    dispatch(openModal());
+  };
+
+
   return (
+   
+    
     <>
       <div>
         <ul className={classnames(s.topic__list, s.table__notes)}>
@@ -42,10 +50,11 @@ const TableNotes = () => {
         {notes.map((item: any) => (
           <ul
             id={item.id}
+             key={item.id}
             className={classnames(s.table__list, s.table__notes)}
           >
             <li className={s.table__item}>
-              <p>{item.name}</p>
+              <p>{item.title}</p>
             </li>
             <li className={s.table__item}>
               <p>{item.created}</p>
@@ -57,22 +66,24 @@ const TableNotes = () => {
               <p>{item.content}</p>
             </li>
             <li className={s.table__item}>
-              <p>{item.dates}</p>
+              {item.dates.map((date: string) => (
+ <p key={date}>{date}</p>
+              ))}
             </li>
             <div className={s.table__ctrl}>
               <button
               type="button"
-              className={s.btn}
+              className={classnames( s.button, s.btnNoteCtrl)}
               onClick={()=>dispatch(deleteNote(item.id))}
             >
               Del
             </button>
-              <button type='button' className={s.btn} onClick={()=>openModalForm('change-note', item.id)}>
+              <button type='button' className={classnames( s.button, s.btnNoteCtrl)} onClick={()=>openFormChange(item.id)}>
         Ch
       </button>
               <button
               type="button"
-              className={s.btn}
+              className={classnames( s.button, s.btnNoteCtrl)}
               onClick={()=>dispatch(archiveNote(item.id))}
             >
               Arch
@@ -81,11 +92,11 @@ const TableNotes = () => {
           </ul>
         ))}
       </div>
-      <div className={s.btnNote}>
+      <div>
         <button
           type="button"
-          className={s.button}
-          onClick={()=>openModalForm('add-note')}
+          className={classnames( s.button, s.btnNoteAdd)}
+          onClick={()=>openFormAdd()}
         >
           Add Note
         </button>

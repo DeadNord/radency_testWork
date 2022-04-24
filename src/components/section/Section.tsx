@@ -1,15 +1,14 @@
-import React from "react"
-import classNames from "classnames";
+import {FC, ReactNode} from "react"
 import s from './Section.module.css';
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-const Section: React.FC<Props> = (props) => {
+const Section: FC<Props> = (props) => {
   return (
-    <section className={classNames( s.section)}>
-      <div className={classNames( s.container)}>{props.children}</div>
+    <section className={s.section}>
+      <div className={s.container}>{props.children}</div>
     </section>
   );
 };

@@ -1,21 +1,21 @@
-import React from "react"
-import { useState } from 'react';
+// import {FC} from "react"
+import { FC, useState } from 'react';
 import s from './Form.module.css';
 
 import { useDispatch } from 'react-redux';
 import { addNote, changeNote } from '../../redux/notes/notes-actions';
+
 
 interface Props {
   formType: string,
   id: string
 }
 
-const Form: React.FC<Props> = (props) => {
-    const [id] = useState(props.id);
-  const [name, setName] = useState('');
+const Form: FC<Props> = (props) => {
+  const [id] = useState(props.id);
+  const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [content, setContent] = useState('');
-  const [buttonType, setButtonType] = useState('');
 
   const dispatch = useDispatch();
   const onSubmit = (data: object) =>
@@ -24,8 +24,8 @@ const Form: React.FC<Props> = (props) => {
   const handleChange = (e:any) => {
     const { name, value } = e.currentTarget;
     switch (name) {
-      case 'name':
-        setName(value);
+      case 'title':
+        setTitle(value);
         break;
       case 'category':
         setCategory(value);
@@ -35,23 +35,16 @@ const Form: React.FC<Props> = (props) => {
         break;
     }
   };
-  switch (props.formType) {
-    case 'add-note':
-      setButtonType('Add Note');
-      break;
-    case 'change-note':
-      setButtonType('Change Note');
-      break;
-  }
+
 
   const handleSubmit = (e:any) => {
     e.preventDefault();
-    onSubmit({id, name, category, content });
+    onSubmit({id, title, category, content });
     reset();
   };
 
   const reset = () => {
-    setName('');
+    setTitle('');
     setCategory('');
     setContent('');
   };
@@ -59,14 +52,15 @@ const Form: React.FC<Props> = (props) => {
   return (
     <form className={s.form} onSubmit={handleSubmit}>
       <label>
-        <p>Name</p>
+        <p>Title</p>
         <input
+          className={s.input}
           type="text"
-          name="name"
+          name="title"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
-          value={name}
+          value={title}
           onChange={handleChange}
         />
       </label>
@@ -74,6 +68,7 @@ const Form: React.FC<Props> = (props) => {
       <label>
         <p>Category</p>
         <input
+          className={s.input}
           type="text"
           name="category"
           required
@@ -90,6 +85,7 @@ const Form: React.FC<Props> = (props) => {
       <label>
         <p>Content</p>
         <input
+          className={s.input}
           type="text"
           name="content"
           required
@@ -98,7 +94,8 @@ const Form: React.FC<Props> = (props) => {
         />
       </label>
       <button type="submit" className={s.button}>
-        {buttonType}
+        {(props.formType === "add-note") && 'Add Note'}
+        {(props.formType === "change-note") && 'Change Note'}
       </button>
     </form>
   );

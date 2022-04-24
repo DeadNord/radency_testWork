@@ -1,12 +1,12 @@
 import TableNotes from './TableNotes';
 import TableStatistics from './TableStatistics';
-import React from "react"
+import { FC } from "react";
 
 interface Props {
-  type: string
+  type: string,
 }
 
-const Table: React.FC<Props> = (props) => {
+const Table: FC<Props> = (props) => {
   return (
     <>
       {props.type === 'list' && <TableNotes />}

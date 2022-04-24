@@ -32,6 +32,7 @@
     "lint:fix": "eslint --fix **/*.js"
   },
   "devDependencies": {
+    "@types/uuid": "^8.3.4",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "16.0.3",
@@ -62,8 +63,8 @@
     ]
   },
   "lint-staged": {
-    "*.{js,jsx, tsx}": "eslint --cache --fix",
-    "*.{js,jsx, tsx,css,md,scss}": "prettier --write"
+    "*.{js,jsx,tsx}": "eslint --cache --fix",
+    "*.{js,jsx,tsx,css,md,scss}": "prettier --write"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {

@@ -1,4 +1,4 @@
-import React from "react"
+import {FC} from "react"
 import s from './Modal.module.css';
 import { closeModal } from '../../redux/modal/modal-actions';
 import { useDispatch } from 'react-redux';
@@ -8,7 +8,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Modal: React.FC<Props> = (props) => {
+const Modal: FC<Props> = (props) => {
   const dispatch = useDispatch();
 
   return (

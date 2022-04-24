@@ -15,7 +15,7 @@ const TableStatistics = () => {
       </ul>
 
       {statistics.map(item => (
-        <ul className={classnames(s.table__list, s.table__statistics)}>
+        <ul key={item.category} className={classnames(s.table__list, s.table__statistics)}>
           <li className={s.table__item}>{item.category}</li>
           <li className={s.table__item}>{item.active}</li>
           <li className={s.table__item}>{item.archived} </li>

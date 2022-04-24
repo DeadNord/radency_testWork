@@ -7,10 +7,6 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {changeVisibilityFilter} from '../../redux/notes/notes-actions';
 
-// interface Props {
-//   onClick: React.ButtonHTMLAttributes<HTMLButtonElement>["onClick"];
-// }
-
 
 const Header = () => {
   const [state, setState] = useState(true);
