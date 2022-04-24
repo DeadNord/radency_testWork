@@ -5,6 +5,8 @@ import data from '../json/data.json';
 
 
 import {
+    persistStore,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -12,6 +14,8 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+
+import storage from 'redux-persist/lib/storage';
 
 const preloadedState: Object = {
   notes: {
@@ -21,6 +25,11 @@ const preloadedState: Object = {
    modal: false
 };
 
+const notesPersistConfig = {
+  key: 'notes',
+  storage,
+  blacklist: ['visibilityFilter'],
+};
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -32,7 +41,7 @@ const middleware = [
 
 const store = configureStore({
   reducer: {
-    notes: notesReducer,
+    notes: persistReducer(notesPersistConfig, notesReducer),
     modal: modalReducer
   },
   middleware,
@@ -40,5 +49,6 @@ const store = configureStore({
   preloadedState: preloadedState,
 });
 
+const persistor = persistStore(store);
 
-export { store };
+export { store, persistor};
