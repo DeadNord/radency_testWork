@@ -1,0 +1,78 @@
+.topic__list {
+    width: auto;
+    display: grid;
+
+    text-align: center;
+
+    background-color: grey;
+    border-radius: 5px;
+    color: white;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.topic__item {
+    margin-left: 10px;
+    margin-right: 10px;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+.table__list {
+    display: grid;
+    margin-top: 10px;
+    text-align: center;
+
+    background-color: #e8eaf6;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.table__item {
+    font-size: 14px;
+    color: #81848d;
+
+}
+
+.table__item:first-child {
+    color: black;
+}
+
+.table__ctrl {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.table__notes {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.table__statistics {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.button {
+    border-radius: 5px;
+}
+
+.btnNoteAdd {
+    width: 80px;
+    height: 50px;
+
+    margin-top: 20px;
+    margin-left: auto;
+}
+
+.btnNoteCtrl {
+    width: 40px;
+    height: 20px;
+}
