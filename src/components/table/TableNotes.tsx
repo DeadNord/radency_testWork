@@ -15,7 +15,7 @@ import { openModal } from '../../redux/modal/modal-actions';
 
 const TableNotes = () => {
   const [formType, setformType] = useState("");
-  const [itemId, setitemId] = useState("");
+  const [itemId, setItemId] = useState("");
 
   const notes = useSelector(getNotes);
   const modalState = useSelector(getModalState);
@@ -28,7 +28,7 @@ const TableNotes = () => {
   };
 
   const openFormChange = (id: string) => {
-    setitemId(id)
+    setItemId(id)
     setformType("change-note");
     dispatch(openModal());
   };
@@ -66,9 +66,9 @@ const TableNotes = () => {
               <p>{item.content}</p>
             </li>
             <li className={s.table__item}>
-              {item.dates.map((date: string) => (
+              {item.dates!== null ? item.dates.map((date: string) => (
  <p key={date}>{date}</p>
-              ))}
+              )) : <></>}
             </li>
             <div className={s.table__ctrl}>
               <button

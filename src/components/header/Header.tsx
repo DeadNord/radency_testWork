@@ -17,13 +17,13 @@ const Header = () => {
     dispatch(changeVisibilityFilter (state));
   });
 
-  const toogleState = () => {
+  const toggleState = () => {
     setState(!state);
   };
 
   return (
     <div className={classNames(s.vision)}>
-      <button type="button" className={s.btn} onClick={toogleState}>
+      <button type="button" className={s.btn} onClick={toggleState}>
         {state === true ? 'Arhvive Notes' : 'Active Notes'}
       </button>
     </div>

@@ -12,8 +12,6 @@ import {
 import { v4 } from 'uuid';
 
 
-
-
 const itemsReducer = createReducer([{}], {
   [addNote.type]: (state, { payload }) => [
     ...state,

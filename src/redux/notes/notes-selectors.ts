@@ -12,12 +12,13 @@ export const getNotes = createSelector(
 );
 
 export const getStatistics = createSelector([getItems], items => {
-  const activeNotes = items
-    .filter((item:any) => item.status === true)
-    .map((item:any) => item.category);
-  const archivedNotes = items
-    .filter((item:any) => item.status === false)
-    .map((item:any) => item.category);
+const [activeNotes, archivedNotes] = items.reduce(([active, archived], item) => {
+  if (typeof item.status === 'boolean') {
+    return item.status ? [[...active, item.category], archived] : [active, [...archived, item.category]];
+  }
+  return [active, archived];
+}, [[], []]);
+
   const amountActiveNotes: {[x: string]: number} = {};
   const amountArchivedNotes: {[x: string]: number} = {};
 
