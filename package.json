@@ -63,8 +63,8 @@
     ]
   },
   "lint-staged": {
-    "*.{js,jsx,tsx}": "eslint --cache --fix",
-    "*.{js,jsx,tsx,css,md,scss}": "prettier --write"
+    "*.{js,jsx, ts, tsx}": "eslint --cache --fix",
+    "*.{js,jsx, ts, tsx,css,md,scss}": "prettier --write"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
